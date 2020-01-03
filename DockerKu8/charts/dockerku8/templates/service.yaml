@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "dockerku8.fullname" . }}
+  labels:
+    app: {{ template "dockerku8.name" . }}
+    chart: {{ template "dockerku8.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "dockerku8.name" . }}
+    release: {{ .Release.Name }}

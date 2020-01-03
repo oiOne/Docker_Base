@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  bookseller-tests:
+    image: ${DOCKER_REGISTRY-}booksellertests
+    build:
+      context: .
+      dockerfile: BookSeller.Tests/Dockerfile
+      target: unittest

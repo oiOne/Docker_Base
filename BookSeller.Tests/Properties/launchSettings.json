@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BookSeller.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
