@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  bookseller-test:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    entrypoint:
+       - dotnet
+       - test
+       - BookSeller.Tests/BookSeller.Tests.csproj
+       - --logger
+       - trx;LogFileName=/tests/bookseller-test-results.trx
+       - /p:CollectCoverage=true
+       - /p:CoverletOutputFormat=cobertura
+       - /p:CoverletOutput=/tests/coverage2.xml
+       - /p:Include="[BookSeller*]*"

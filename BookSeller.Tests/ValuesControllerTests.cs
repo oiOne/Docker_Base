@@ -7,7 +7,7 @@ namespace BookSeller.Tests
     {
         /*
          *
-         * docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
+         * docker-compose -f docker-compose-bookseller-test.yml -f docker-compose-bookseller-test.override.yml up
          */
         [Fact]
         public void Check_Tests_Availability()
