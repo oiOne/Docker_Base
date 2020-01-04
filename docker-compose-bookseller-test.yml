@@ -7,3 +7,16 @@ services:
       context: .
       dockerfile: BookSeller.Tests/Dockerfile
       target: unittest
+    depends_on:
+      - bookseller
+      - bookwriter
+  bookseller:
+    build:
+      context: .
+      dockerfile: BookSeller/Dockerfile
+    container_name: bookseller-api
+  bookwriter:
+    build:
+      context: .
+      dockerfile: BookWriter/Dockerfile
+    container_name: bookwriter-api
